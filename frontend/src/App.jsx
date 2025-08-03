@@ -4,8 +4,9 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
-  const [sourcePoint, setSourcePoint] = useState(null);
-  const [destinationPoint, setDestinationPoint] = useState(null);
+  const[sourcePoint, setSourcePoint] = useState(null);
+  const[destinationPoint, setDestinationPoint] = useState(null);
+ 
   const [routePath, setRoutePath] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,7 +26,7 @@ function App() {
 
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:3001/api/route', {
+      const response = await axios.post('http://localhost:3000/api/route', {
         source: sourcePoint,
         destination: destinationPoint
       });

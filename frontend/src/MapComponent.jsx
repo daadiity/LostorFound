@@ -39,8 +39,8 @@ function MapClickHandler({ onMapClick }) {
 }
 
 function MapComponent({ onMapClick, sourcePoint, destinationPoint, routePath }) {
-  // Default center (you can change this to your preferred location)
-  const center = [40.7589, -73.9851]; // Times Square, NYC
+ 
+  const center = [40.7589, -73.9851]; 
   
   return (
     <div style={{ height: '700px', width: '150%' }}>
