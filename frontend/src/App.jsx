@@ -23,6 +23,7 @@ function App() {
       alert('Please select both source and destination points');
       return;
     }
+    ///api/test-osm
 
     setIsLoading(true);
     try {
