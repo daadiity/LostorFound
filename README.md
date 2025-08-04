@@ -1,2 +1,2 @@
-It is a basic map which works on dijkstra's algorithm . A common algo for finding shortes path in a graph . In frontend i am using react leaflet library mapping library . So the user gives source and desitnation as input and we can get latitude and longitudes 
+It is a basic map which works on dijkstra's algorithm . A common algo for finding shortes path in a graph . In frontend i am using react leaflet  mapping library . So the user gives source and desitnation as input and we can get latitude and longitudes 
 of source and destination form those in backend i used osm ' overpass api for getting all the roads in a recatngular grid which uses starting and ending points as a diagonal , now we calculate the shortest path using our algo
