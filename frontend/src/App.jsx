@@ -49,7 +49,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Lost Or Found</h1>
+      <h1>Go pilot</h1>
+      <img src="https://collection.cloudinary.com/dklaovsjk/b6488f3b14cba54bb76c2f2f20e85dce" alt="" />
       
       <div className="controls">
         <div className="points-info">

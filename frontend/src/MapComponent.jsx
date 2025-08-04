@@ -40,19 +40,19 @@ function MapClickHandler({ onMapClick }) {
 
 function MapComponent({ onMapClick, sourcePoint, destinationPoint, routePath }) {
  
-  const center = [40.7589, -73.9851]; 
+  const center = [27.18333000, 78.01667000]; 
   
   return (
-    <div className="map-container" style={{ height: '100vh', width: '130vw', maxWidth: '1200px' }}>
-      <div className="map-inner" style={{ height: '100%', width: '100%' }}>
-        <MapContainer
-          center={center}
-          zoom={13}
-          style={{ height: '100%', width: '100%' }}
-          zoomControl={true}
-          scrollWheelZoom={true}
-          doubleClickZoom={true}
-        >
+  <div className="map-container" style={{ height: '100vh', width: '100vw' }}>
+  <div className="map-inner" style={{ height: '100%', width: '100%' }}>
+    <MapContainer
+      center={center}
+      zoom={13}
+      style={{ height: '100%', width: '100%' }}
+      zoomControl={true}
+      scrollWheelZoom={true}
+      doubleClickZoom={true}
+    >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
