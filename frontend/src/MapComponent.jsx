@@ -14,19 +14,19 @@ L.Icon.Default.mergeOptions({
 const sourceIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
+  iconSize: [30, 45],
+  iconAnchor: [15, 45],
   popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+  shadowSize: [45, 45]
 });
 
 const destinationIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
+  iconSize: [30, 45],
+  iconAnchor: [15, 45],
   popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+  shadowSize: [45, 45]
 });
 
 function MapClickHandler({ onMapClick }) {
@@ -43,12 +43,16 @@ function MapComponent({ onMapClick, sourcePoint, destinationPoint, routePath }) 
   const center = [40.7589, -73.9851]; 
   
   return (
-    <div style={{ height: '700px', width: '150%' }}>
-      <MapContainer
-        center={center}
-        zoom={13}
-        style={{ height: '100%', width: '100%' }}
-      >
+    <div className="map-container" style={{ height: '100vh', width: '130vw', maxWidth: '1200px' }}>
+      <div className="map-inner" style={{ height: '100%', width: '100%' }}>
+        <MapContainer
+          center={center}
+          zoom={13}
+          style={{ height: '100%', width: '100%' }}
+          zoomControl={true}
+          scrollWheelZoom={true}
+          doubleClickZoom={true}
+        >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -58,13 +62,25 @@ function MapComponent({ onMapClick, sourcePoint, destinationPoint, routePath }) 
         
         {sourcePoint && (
           <Marker position={[sourcePoint.lat, sourcePoint.lng]} icon={sourceIcon}>
-            <Popup>Source Point</Popup>
+            <Popup>
+              <div style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                🚩 <strong>Starting Point</strong><br/>
+                <small>Lat: {sourcePoint.lat.toFixed(4)}<br/>
+                Lng: {sourcePoint.lng.toFixed(4)}</small>
+              </div>
+            </Popup>
           </Marker>
         )}
         
         {destinationPoint && (
           <Marker position={[destinationPoint.lat, destinationPoint.lng]} icon={destinationIcon}>
-            <Popup>Destination Point</Popup>
+            <Popup>
+              <div style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                🎯 <strong>Destination</strong><br/>
+                <small>Lat: {destinationPoint.lat.toFixed(4)}<br/>
+                Lng: {destinationPoint.lng.toFixed(4)}</small>
+              </div>
+            </Popup>
           </Marker>
         )}
         
@@ -77,6 +93,7 @@ function MapComponent({ onMapClick, sourcePoint, destinationPoint, routePath }) 
           />
         )}
       </MapContainer>
+      </div>
     </div>
   );
 }

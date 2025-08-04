@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Route Finder</h1>
+      <h1>Lost Or Found</h1>
       
       <div className="controls">
         <div className="points-info">
